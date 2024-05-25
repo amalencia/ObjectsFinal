@@ -4,17 +4,17 @@ public class Character_ver0
     private float _baseSpeed;
     private int _armor;
 
-    private void Move()
+    public virtual void Move()
     {
 
     }
 
-    private void Attack()
+    public virtual void Attack()
     {
 
     }
 
-    private void Die()
+    public virtual void Die()
     {
 
     }

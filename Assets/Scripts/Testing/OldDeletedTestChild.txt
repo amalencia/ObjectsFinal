@@ -1,0 +1,23 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+
+public class TestChild 
+{
+    //ITestInterface testInterfacer;
+    
+    //private int _health = 5;
+    //private int _armor = 5;
+
+    //public  void PerformFight()
+    //{
+    //    testInterfacer.Fight();
+    //}
+
+    //public TestChild(ITestInterface testInterfacer)
+    //{
+    //    this.testInterfacer = testInterfacer;
+    //}
+}
