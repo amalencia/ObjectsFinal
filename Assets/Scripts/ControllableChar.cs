@@ -22,10 +22,4 @@ public class ControllableChar
     {
 
     }
-
-    public ControllableChar(float speed, int health)
-    {
-        this.speed = speed;
-        healthPoints = new Health(health);
-    }
 }

@@ -20,10 +20,6 @@ public class BulletFinal : MonoBehaviour
         power = damageParam;
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        power = collision.GetComponent<IPower>().GetPower();
-    }
     private void Update()
     {
         transform.Translate(_bulletSpeed * Time.deltaTime* vector);
@@ -33,7 +29,7 @@ public class BulletFinal : MonoBehaviour
     {
         if(collision.gameObject.CompareTag(targetTag))
         {
-            collision.GetComponent<IDamageable>().ReceiveDamage(power);
+            collision.GetComponent<CharacterAbstract>().ReceiveDamage(power);
             Destroy(gameObject);
         }
     }

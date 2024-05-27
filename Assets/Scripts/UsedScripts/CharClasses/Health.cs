@@ -2,60 +2,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class Health
+[CreateAssetMenu(fileName = "New Health", menuName = "Health Class")]
+public class Health : ScriptableObject
 {
-    private int _maxHealth;
+    [SerializeField] private int _maxHealth;
     private int _currentHealth;
-
-    public int MaxHealth
-    {
-        get
-        {
-            return _maxHealth;
-        }
-    }
 
     public int GetCurrentHealth()
     {
         return _currentHealth;
     }
 
+    public void InitializeHealth()
+    {
+        _currentHealth = _maxHealth;
+    }
+
+    public int GetMaxHealth()
+    {
+        return _maxHealth;
+    }
+
     public void TakeDamage(int damage)
     {
-        _currentHealth -= damage;
-        Debug.Log("Lost health, health now: " + _currentHealth);
-    }
-
-    public void TakeDamage()
-    {
-        _currentHealth--;
-        Debug.Log("Lost health, health now: " +  _currentHealth);
-    }
-
-    public void Repair()
-    {
-        _currentHealth++;
-        if (_currentHealth > _maxHealth)
-        {
-            _currentHealth = _maxHealth;
-        }
+        _currentHealth = _currentHealth - damage;
     }
 
     public void Repair(int heal)
     {
-        if((_currentHealth + heal) > _maxHealth)
+        _currentHealth += heal;
+        if(_currentHealth > _maxHealth)
         {
             _currentHealth = _maxHealth;
-        } else
-        {
-            _currentHealth += heal;
         }
     }
 
-    public Health(int maxHealth)
+    public void IncreaseMaxHealth(int maxIncrease)
     {
-        _maxHealth = maxHealth;
-        _currentHealth = maxHealth;
+        _maxHealth += maxIncrease;
     }
 }

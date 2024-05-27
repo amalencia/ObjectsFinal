@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 2915880258764860963}
   - component: {fileID: 2915880258764860973}
   - component: {fileID: 2915880258764860972}
+  - component: {fileID: 5778721368262192919}
   m_Layer: 0
   m_Name: ShooterEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138,7 +139,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 20
+  m_Mass: 75
   m_LinearDrag: 0.3
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -147,3 +148,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5778721368262192919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2915880258764860960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac10902f63c121244b13c3bfc0c6c03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: {fileID: 11400000, guid: 0f1b6556284b02546b1c62d0b5812e78, type: 2}
+  _armor: {fileID: 11400000, guid: 29e809862bef43245a9410b51972d7be, type: 2}
+  _power: {fileID: 11400000, guid: 8ddcb1d3edb1fbf4d8056bea86d9fb32, type: 2}
+  _speed: {fileID: 11400000, guid: 75bcf0a22d8b8d9488d788c2816cb3b8, type: 2}
+  _rigidBody: {fileID: 2915880258764860972}
+  target: {fileID: 0}
+  _attackDistance: 0
+  _timer: 0
+  direction: {x: 0, y: 0}
+  angle: 0

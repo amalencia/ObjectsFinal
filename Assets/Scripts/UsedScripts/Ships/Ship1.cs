@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ship1 : PlayerX
+public class Ship1 //: PlayerX
 {
     [Header("Integers")]
     [SerializeField] private int _healthPoints;
@@ -17,14 +17,14 @@ public class Ship1 : PlayerX
  
     }
 
-    public override void SetParameters()
-    {
-        health = new Health(_healthPoints);
-        armor = new Armor(_armorPoints);
-        speed = new Speed(_baseSpeed);
-        power = new Power(_basePower);
-        _ship1RigidBody = new Rigidbody2D();
-    }
+    //public override void SetParameters()
+    //{
+    //    health = new Health(_healthPoints);
+    //    armor = new Armor(_armorPoints);
+    //    speed = new Speed(_baseSpeed);
+    //    power = new Power(_basePower);
+    //    _ship1RigidBody = new Rigidbody2D();
+    //}
 
     public void OnTriggerEnter2D(Collider2D collision)
     {

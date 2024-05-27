@@ -2,14 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Power
+[CreateAssetMenu(fileName = "New Power", menuName = "Power Class")]
+public class Power : ScriptableObject
 {
-    private int _power;
-
-    public Power(int power)
-    {
-        _power = power;
-    }
+    [SerializeField] private int _power;
 
     public int CurrentPower()
     {
@@ -19,16 +15,6 @@ public class Power
     public void IncreasePower(int power)
     {
         _power += power;
-    }
-
-    public void IncreasePower()
-    {
-        _power++;
-    }
-
-    public void DecreasePower()
-    {
-        _power--;
     }
 
     public void DecreasePower(int power)

@@ -155,11 +155,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ea75d94ba0ae634e92d6a004cf207c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthPoints: 100
-  _armorPoints: 100
-  _baseSpeed: 25
-  _basePower: 25
+  _health: {fileID: 11400000, guid: 09721bd720b4f3e4690221fb28602fb9, type: 2}
+  _armor: {fileID: 11400000, guid: b7745a716f28e88409c4bb77cdfc9be0, type: 2}
+  _power: {fileID: 11400000, guid: dda2bb77ab06f0d429be3559cb9fdda7, type: 2}
+  _speed: {fileID: 11400000, guid: 8c7b9b66532603c41b80750d47ef9406, type: 2}
   _rigidBody: {fileID: 1490487534912387564}
+  _bulletReference: {fileID: 8606634632860484042, guid: 7b53ead09c2b49a46bc9979bd56eff82, type: 3}
+  _gameObject: {fileID: 0}
+  OnHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1490487534912387565
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -161,12 +161,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c72e62814f1a8984fafcda176fc70e0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthPoints: 25
-  _armorPoints: 0
-  _baseSpeed: 25
-  _basePower: 25
+  _health: {fileID: 11400000, guid: d69a143f4474ed34abeff0ae177a724c, type: 2}
+  _armor: {fileID: 11400000, guid: 54b6e590a49cf9e43970b223ac879fd6, type: 2}
+  _power: {fileID: 11400000, guid: f96a855d22c04814899986835884c2fb, type: 2}
+  _speed: {fileID: 11400000, guid: 81052680aff9fd94e83284deddcbc027, type: 2}
   _rigidBody: {fileID: 7165710236581380786}
-  _attackDistance: 2
-  _timer: 0
   _bulletReference: {fileID: 8606634632860484042, guid: 7b53ead09c2b49a46bc9979bd56eff82, type: 3}
-  _gameObject: {fileID: 7165710236581380750}
+  target: {fileID: 0}
+  _attackDistance: 4
+  _timer: 0
+  direction: {x: 0, y: 0}
+  angle: 0
+  _angleMargin: 3

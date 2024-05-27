@@ -25,10 +25,5 @@ public class Character_ver0
     /// <param name="health"></param>
     /// <param name="baseSpeed"></param>
     /// <param name="armor"></param>
-    public Character_ver0(int health, float baseSpeed, int armor)
-    {
-        _health = new Health(health);
-        _baseSpeed = baseSpeed;
-        _armor = armor;
-    }
+
 }

@@ -23,15 +23,6 @@ public class TestEnemyChild1 : TestEnemy
         _testInterface.Fight();
     }
 
-    public override void TestInitiateParams()
-    {
-        _health = new Health(_healthPoints);
-        _armor = new Armor(_armorPoints);
-        _speed = new Speed(_baseSpeed);
-        _power = new Power(_basePower);
-        _testInterface = new TestInterfaceType1();
-    }
-
     public override void TestAttack()
     {
         Debug.Log("Overriding Attack");

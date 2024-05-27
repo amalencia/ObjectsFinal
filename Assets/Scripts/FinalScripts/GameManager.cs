@@ -6,6 +6,10 @@ public class GameManager : MonoBehaviour
 {
     Coroutine courtineName;
     [SerializeField] private StandardEnemy standardEnemy;
+    [SerializeField] private ShooterTieEnemy shooterEnemy;
+    [SerializeField] private MachineGunEnemy machineEnemy;
+    [SerializeField] private ExplodeEnemyFinal explodeEnemy;
+    [SerializeField] private BossEnemy bossEnemy;
     [SerializeField] private Transform[] spawnPoints;
     public static GameManager singleton;
     public ScoreManager scoreManager;
@@ -19,8 +23,12 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Instantiate(standardEnemy);
-        courtineName = StartCoroutine(SpawnEnemy());
-        JsonTestLearn();
+        //Instantiate(shooterEnemy);
+        //Instantiate(machineEnemy);
+        //Instantiate(explodeEnemy);
+        //Instantiate(bossEnemy);
+        //courtineName = StartCoroutine(SpawnEnemy());
+        //JsonTestLearn();
     }
 
     private void JsonTestLearn()
@@ -44,7 +52,7 @@ public class GameManager : MonoBehaviour
 
     public void EndGame()
     {
-        StopCoroutine(courtineName);
+        //StopCoroutine(courtineName);
         scoreManager.RegisterHighScore();
     }
 

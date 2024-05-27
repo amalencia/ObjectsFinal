@@ -2,36 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Speed
+[CreateAssetMenu(fileName = "New Speed", menuName = "Speed Class")]
+public class Speed : ScriptableObject
 {
-    private float _baseSpeed;
+    [SerializeField] private int _baseSpeed;
 
-    public Speed(float speed)
-    {
-        _baseSpeed = speed;
-    }
-
-    public float CurrentSpeed()
+    public int CurrentSpeed()
     {
         return _baseSpeed;
     }
 
-    public void IncreaseSpeed()
+    public void IncreaseSpeed(int increase)
     {
-        _baseSpeed++;
+        _baseSpeed += increase;
     }
 
-    public void IncreaseSpeed(float speed)
-    {
-        _baseSpeed += speed;
-    }
-
-    public void DecreaseSpeed()
-    {
-        _baseSpeed--;
-    }
-
-    public void DecreaseSpeed(float speed)
+    public void DecreaseSpeed(int speed)
     {
         _baseSpeed -= speed;
     }
