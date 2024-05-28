@@ -12,6 +12,9 @@ public class EnemyParent : CharacterAbstract
     [SerializeField] protected float _timer;
     [SerializeField] protected Vector2 direction;
     [SerializeField] protected float angle;
+    [SerializeField] protected float _stopDistance;
+    [SerializeField] protected float _angleMargin;
+    [SerializeField] protected float _rotateSpeed;
 
     //NOTES!!!!
     //1) Check if _timer for attack should be a CoRoutine
@@ -47,25 +50,35 @@ public class EnemyParent : CharacterAbstract
 
     public override void Move(Vector2 direction, float angle)
     {
-        if (Vector2.Distance(target.transform.position, transform.position) > _attackDistance)
+        float angleToRotate = angle + 270;
+        if (angleToRotate > 360)
         {
-            _rigidBody.AddForce(_speed.CurrentSpeed() * 500f * Time.deltaTime * direction.normalized);
-            _timer = 0;
+            angleToRotate -= 360;
         }
-        else
+
+        float lowAngle = angleToRotate - _angleMargin;
+        float highAngle = angleToRotate + _angleMargin;
+
+        Vector3 rotationVector = new (0, 0, angleToRotate);
+        Quaternion _targetRotation = Quaternion.Euler(rotationVector);
+
+        if (transform.rotation.eulerAngles.z < lowAngle || transform.rotation.eulerAngles.z > highAngle)
         {
             _rigidBody.velocity = Vector2.zero;
-            _timer += Time.deltaTime;
-            if (_timer > 1f)
-            {
-                target.ReceiveDamage(25); //Need to edit this
-                _timer = 0;
-            }
-
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, _targetRotation, _rotateSpeed * Time.deltaTime);
+        } else if (Vector2.Distance(target.transform.position, transform.position) > _stopDistance)
+        {
+            _timer = 0;
+            _rigidBody.AddForce(_speed.CurrentSpeed() * 500f * Time.deltaTime * direction.normalized);
+        } else
+        {
+            _rigidBody.velocity = Vector2.zero;
         }
 
-        //CHECK WHAT THIS IS DOING!!!!
-        transform.rotation = Quaternion.Euler(0, 0, angle - 90);
+        if(Vector2.Distance(target.transform.position, transform.position) < _attackDistance)
+        {
+            Attack();
+        }
     }
 
     public override void Die()

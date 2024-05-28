@@ -5,6 +5,7 @@ using UnityEngine;
 public class BulletFinal : MonoBehaviour
 {
     [SerializeField] private float _bulletSpeed;
+    [SerializeField] private int _powerMultiplier;
     private Vector3 vector;
     private int power;
     private string targetTag;
@@ -25,11 +26,11 @@ public class BulletFinal : MonoBehaviour
         transform.Translate(_bulletSpeed * Time.deltaTime* vector);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag(targetTag))
         {
-            collision.GetComponent<CharacterAbstract>().ReceiveDamage(power);
+            collision.GetComponent<CharacterAbstract>().ReceiveDamage(power*_powerMultiplier);
             Destroy(gameObject);
         }
     }

@@ -47,7 +47,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.000080809, y: 0.006353385}
+  m_Offset: {x: 0, y: -0.317}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -77,11 +77,17 @@ MonoBehaviour:
   _power: {fileID: 11400000, guid: 3152468ae22a29746adc2fdce4e604fd, type: 2}
   _speed: {fileID: 11400000, guid: 269e430eaa82cd2498dc74566fa12667, type: 2}
   _rigidBody: {fileID: 1438431654593589664}
+  _bulletReference: {fileID: 0}
   target: {fileID: 0}
   _attackDistance: 0
   _timer: 0
   direction: {x: 0, y: 0}
   angle: 0
+  _stopDistance: 0
+  _angleMargin: 0
+  _rotateSpeed: 0
+  _bossHeart: {fileID: 7704114017591455741}
+  m_Enemy: {fileID: 4075334290595654834}
 --- !u!50 &1438431654593589664
 Rigidbody2D:
   serializedVersion: 4
@@ -97,7 +103,7 @@ Rigidbody2D:
   m_Mass: 75
   m_LinearDrag: 0.75
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -225,10 +231,10 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.312}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5, y: 1}
     oldSize: {x: 0.32, y: 0.32}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
@@ -268,8 +274,13 @@ MonoBehaviour:
   _power: {fileID: 11400000, guid: 3ba0bada3bfcdf3488a83c1076e01c61, type: 2}
   _speed: {fileID: 11400000, guid: 5f88ee74e8a40e94cb2160ebca2b1755, type: 2}
   _rigidBody: {fileID: 1340441535068009596}
+  _bulletReference: {fileID: 1066601119350375687, guid: 77966aabfc0256440a6c9f511fde14ae, type: 3}
   target: {fileID: 0}
   _attackDistance: 0
   _timer: 0
   direction: {x: 0, y: 0}
   angle: 0
+  _stopDistance: 0
+  _angleMargin: 0
+  _rotateSpeed: 0
+  _bossHeart: {fileID: 7704114017591455741}

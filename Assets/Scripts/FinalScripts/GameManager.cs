@@ -23,10 +23,10 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Instantiate(standardEnemy);
-        //Instantiate(shooterEnemy);
-        //Instantiate(machineEnemy);
-        //Instantiate(explodeEnemy);
-        //Instantiate(bossEnemy);
+        Instantiate(shooterEnemy);
+        Instantiate(machineEnemy);
+        Instantiate(explodeEnemy);
+        Instantiate(bossEnemy);
         //courtineName = StartCoroutine(SpawnEnemy());
         //JsonTestLearn();
     }

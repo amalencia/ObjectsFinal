@@ -168,8 +168,10 @@ MonoBehaviour:
   _rigidBody: {fileID: 7165710236581380786}
   _bulletReference: {fileID: 8606634632860484042, guid: 7b53ead09c2b49a46bc9979bd56eff82, type: 3}
   target: {fileID: 0}
-  _attackDistance: 4
+  _attackDistance: 5
   _timer: 0
   direction: {x: 0, y: 0}
   angle: 0
+  _stopDistance: 4
   _angleMargin: 3
+  _rotateSpeed: 100
