@@ -10,6 +10,7 @@ public class PracticePickup : MonoBehaviour
         if(collision.gameObject.CompareTag("Player"))
         {
             PickMe();
+            collision.gameObject.GetComponent<ShipPlayerParent>().IncreaseNukes();
         }
     }
 

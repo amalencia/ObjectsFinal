@@ -9,4 +9,22 @@ public class Ship1Final : ShipPlayerParent
         base.Start();
     }
 
+    public override void SpecialWeapon()
+    {
+        specialWeaponTimer = 5;
+        specialImageTimer.InitializedTimer();
+        StartCoroutine(SpecialWeaponEffect());
+    }
+
+    protected IEnumerator SpecialWeaponEffect()
+    {
+        while (specialWeaponTimer > 0)
+        {
+            yield return new WaitForSeconds(0.1f);
+
+            Attack();
+        }
+    }
+
+
 }

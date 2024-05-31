@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8179896490663090232}
   m_Layer: 0
   m_Name: Ship2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -166,6 +166,7 @@ MonoBehaviour:
   _power: {fileID: 11400000, guid: 8864f010519875346856685bf5bd444b, type: 2}
   _speed: {fileID: 11400000, guid: 17c58c71faa0ef842a5f1d3960195925, type: 2}
   _rigidBody: {fileID: 4798726496193851744}
+  _bulletReference: {fileID: 0}
   OnHealthChanged:
     m_PersistentCalls:
       m_Calls: []

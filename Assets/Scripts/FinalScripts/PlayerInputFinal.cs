@@ -20,6 +20,11 @@ public class PlayerInputFinal : MonoBehaviour
         {
             myPlayer.Attack();
         }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            myPlayer.Nuke();
+        }
     }
 
     // Update is called once per frame

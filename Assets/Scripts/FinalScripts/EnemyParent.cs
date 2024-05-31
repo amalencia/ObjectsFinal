@@ -84,6 +84,14 @@ public class EnemyParent : CharacterAbstract
     public override void Die()
     {
         GameManager.singleton.scoreManager.IncreaseScore();
+        int nukenumber = Random.Range(0, 50);
+        if(nukenumber == 33) 
+        {
+            GameManager.singleton.CreatePickUp(transform.position);
+        } else if (nukenumber == 43)
+        {
+            GameManager.singleton.CreatePickUp2D(transform.position);
+        }
         Destroy(gameObject);
     }
 }

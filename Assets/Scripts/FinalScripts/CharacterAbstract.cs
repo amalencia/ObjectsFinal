@@ -62,7 +62,7 @@ public abstract class CharacterAbstract : MonoBehaviour
 
     }
 
-    IEnumerator ArmorRegen()
+    protected virtual IEnumerator ArmorRegen()
     {
         while (_armor.CurrentArmor() < _armor.MaxArmor())
         {

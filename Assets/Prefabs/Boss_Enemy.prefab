@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1430206432378815609}
   - component: {fileID: 7704114017591455741}
   - component: {fileID: 1438431654593589664}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BossHeart
   m_TagString: BossHeart
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 1340441535068009596}
   - component: {fileID: 8513617391230660541}
   - component: {fileID: 4075334290595654834}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Boss_Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}

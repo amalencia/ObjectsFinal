@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1979950618498911593}
   - component: {fileID: 1979950618498911592}
   - component: {fileID: 6156966821589783257}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ExplodeEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -170,6 +170,7 @@ MonoBehaviour:
   _rotateSpeed: 100
   _explosion: {fileID: 3507985644652998829}
   _explodeObject: {fileID: 1391641796977244584}
+  _explosionMultiplier: 0
 --- !u!1001 &923120041186654226
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -236,6 +237,10 @@ PrefabInstance:
     - target: {fileID: 2278696196116791738, guid: 22a211d872e6d3948a1528c303a450e3, type: 3}
       propertyPath: m_Name
       value: ShipExplosion 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2278696196116791738, guid: 22a211d872e6d3948a1528c303a450e3, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2278696196116791738, guid: 22a211d872e6d3948a1528c303a450e3, type: 3}
       propertyPath: m_IsActive

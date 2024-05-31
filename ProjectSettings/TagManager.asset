@@ -7,19 +7,20 @@ TagManager:
   - Enemy
   - BossHeart
   - Bullet
+  - pickup
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - InvisibleWall
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Enemy
+  - Bullet
+  - explosion
+  - pickup
+  - Player
+  - Nuke
   - 
   - 
   - 
