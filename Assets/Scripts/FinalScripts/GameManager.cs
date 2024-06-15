@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     private int bossChecker;
     [SerializeField] private PracticePickup nukePickup;
     [SerializeField] private PracticePickup2 gunPickup;
+    [SerializeField] private UIManager uiManager;
 
     private void Awake()
     {
@@ -43,8 +44,20 @@ public class GameManager : MonoBehaviour
         //JsonTestLearn();
         gameLevel = 1;
         bossChecker = 1;
+        uiManager.UpdateGameLevel(gameLevel);
         //Instantiate(explodeEnemy, transform.position, Quaternion.identity);
         Invoke("EnemySpawnManager", 1f);
+    }
+
+    public int GetGameLevel()
+    {
+        return gameLevel;
+    }
+
+    public void IncreaseGameLevel()
+    {
+        gameLevel++;
+        uiManager.UpdateGameLevel(gameLevel);
     }
 
     private void JsonTestLearn()
@@ -189,5 +202,10 @@ public class GameManager : MonoBehaviour
     public void CreatePickUp2D(Vector3 location)
     {
         Instantiate(gunPickup, location, Quaternion.identity);
+    }
+
+    public void CreateBossPickup(Vector3 location)
+    {
+
     }
 }

@@ -46,6 +46,11 @@ public class ShipPlayerParent : CharacterAbstract
 
     public virtual Vector3 GetSpecialTimerPosition()
     {
+        if(transform.position == null)
+        {
+            return Vector3.zero;
+        }
+
         Vector3 vector3 = mainCamera.WorldToScreenPoint(transform.position);
         return vector3;
     }

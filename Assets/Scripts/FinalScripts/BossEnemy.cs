@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class BossEnemy : EnemyParent
 {
@@ -43,7 +45,7 @@ public class BossEnemy : EnemyParent
 
     protected virtual void StartMovement()
     {
-        transform.Translate(new Vector3(-1, 0, 0) * Time.deltaTime * _speed.CurrentSpeed(), Space.World);
+        transform.Translate(Time.deltaTime * _speed.CurrentSpeed() * new Vector3(-1, 0, 0), Space.World);
         if(transform.position.x <= 4)
         {
             _startMovement = false;
@@ -54,7 +56,7 @@ public class BossEnemy : EnemyParent
     {
         if(_goUp)
         {
-            transform.Translate(_movement * Time.deltaTime * _speed.CurrentSpeed(), Space.World);
+            transform.Translate(Time.deltaTime * _speed.CurrentSpeed() * _movement, Space.World);
             if(transform.position.y <= -2.5f)
             {
                 _goUp = false;
@@ -62,7 +64,7 @@ public class BossEnemy : EnemyParent
             }
         } else
         {
-            transform.Translate(_movement*Time.deltaTime * _speed.CurrentSpeed(), Space.World);
+            transform.Translate(Time.deltaTime * _speed.CurrentSpeed() * _movement, Space.World);
             if(transform.position.y >= 2.5f)
             {
                 _goUp = true;
@@ -77,7 +79,10 @@ public class BossEnemy : EnemyParent
 
     public override void Die()
     {
-        base.Die();
+        GameManager.singleton.scoreManager.IncreaseScore();
+        GameManager.singleton.IncreaseGameLevel();
+        GameManager.singleton.CreateBossPickup(transform.position);
+        Destroy(gameObject);
         Destroy(_bossHeart);
     }
 }

@@ -25,6 +25,12 @@ public class EnemyParent : CharacterAbstract
         base.Start();
         target = FindObjectOfType<ShipPlayerParent>();
         SetWeaponBehaviour();
+        SetDifficulty();
+    }
+
+    protected virtual void SetDifficulty()
+    {
+
     }
 
     public override void SetWeaponBehaviour()
@@ -88,7 +94,7 @@ public class EnemyParent : CharacterAbstract
         if(nukenumber == 33) 
         {
             GameManager.singleton.CreatePickUp(transform.position);
-        } else if (nukenumber == 43)
+        } else if (nukenumber == 44)
         {
             GameManager.singleton.CreatePickUp2D(transform.position);
         }

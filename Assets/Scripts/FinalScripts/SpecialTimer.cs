@@ -18,11 +18,14 @@ public class SpecialTimer : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        if(timerCircle.fillAmount > 0)
+        if (timerCircle.fillAmount > 0)
         {
             timerCircle.fillAmount = Mathf.Lerp(1, 0, t);
+            if (player != null)
+            {
             transform.position = player.GetSpecialTimerPosition();
-            t += Time.deltaTime/5;
+            t += Time.deltaTime / 5;
+            }
         }
 
         if (t >= 1)

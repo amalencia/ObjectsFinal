@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _numberOfNukes;
     [SerializeField] private TextMeshProUGUI _totalScoreText;
     [SerializeField] private TextMeshProUGUI _highScoreText;
+    [SerializeField] private TextMeshProUGUI _gameLevel;
 
     public void UpdateHealthUI(int counter)
     {
@@ -34,6 +35,11 @@ public class UIManager : MonoBehaviour
     public void UpdateHSUI(int counter)
     {
         _highScoreText.text = counter.ToString();
+    }
+
+    public void UpdateGameLevel(int counter)
+    {
+        _gameLevel.text = counter.ToString();
     }
 
 }

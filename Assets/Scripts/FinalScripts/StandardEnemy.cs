@@ -5,21 +5,20 @@ using static UnityEngine.GraphicsBuffer;
 
 public class StandardEnemy : EnemyParent
 {
-    protected void Update()
+    protected override void SetDifficulty()
     {
-
+        base.SetDifficulty();
+        if (GameManager.singleton.GetGameLevel() > 1)
+        {
+            int number = GameManager.singleton.GetGameLevel() - 1;
+            for(int i = 0; i < number; i++)
+            {
+                _health.IncreaseMaxHealth(25);
+                _armor.IncreaseMaxArmor(25);
+            }
+        }
     }
 
-    protected override void FixedUpdate()
-    {
-        base.FixedUpdate();
-
-    }
-
-    public override void Move(Vector2 direction, float angle)
-    {
-        base.Move(direction, angle);
-    }
     public override void Attack()
     {
         _timer += Time.deltaTime;
